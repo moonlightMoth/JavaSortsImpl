@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public interface Sort {
+public interface Sort {
+
+    public static int[] sort(int[] v) { throw new RuntimeException("Not Implemented"); }
 }
+

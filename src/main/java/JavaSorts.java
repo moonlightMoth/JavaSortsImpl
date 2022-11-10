@@ -9,30 +9,27 @@ import java.util.Scanner;
 public class JavaSorts {
     public static void main(String[] args) throws Exception {
 
-        int dim = 1000000;
+        int dim = 5;
 
-        Scanner s = new Scanner(new FileReader("input"+ dim  +".txt"));
-
-        Integer.parseInt(s.nextLine());
-
-        String string = s.nextLine();
-
-        Integer[] v = Arrays.stream(string.split(" ")).map(Integer::parseInt).toArray(Integer[]::new);
-
-        Arrays.sort(v, Integer::compare);
-
-        FileWriter fw = new FileWriter("input" + dim + "_sorted.txt", Charset.defaultCharset());
+        int[] v = new int[5];
+        Scanner s = new Scanner(System.in);
         Random r = new Random();
 
-        fw.append(String.valueOf(dim)).append("\n");
+        int a;
 
         for (int i = 0; i < dim; i++) {
-            fw.append(v[i].toString());
-            fw.append(" ");
+            a = r.nextInt(15);
+            System.out.println(a);
+            v[i] = a;
         }
 
-        fw.flush();
-        fw.close();
+        ShakerSort.sort(v);
+
+        for (int i : v) {
+            System.out.println(i);
+        }
+
+
     }
 
 
